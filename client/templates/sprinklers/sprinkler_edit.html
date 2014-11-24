@@ -1,0 +1,47 @@
+<template name="sprinklerEdit">
+  <form class="form js-saveSprinkler">
+    <h3>Sprinkler details</h3>
+    <div class="formItem">
+      <label fpr="name" class="label">Name</label>
+      <input name="name" type="text" class="input input-text" value="{{name}}"/>
+    </div>
+
+    <div class="formItem">
+      <label for="notes" class="label">Notes</label>
+      <textarea name="notes" class="input input-textarea">{{notes}}</textarea>
+    </div>
+
+    <div class="formItem">
+      <label class="label" for="icon">Icon</label>
+      <select class="select" name="icon">
+        {{#each icons}}
+          {{> selectOption}}
+        {{/each}}
+      </select>
+    </div>
+
+    <h3>Scheduled timer details</h3>
+
+    <div class="formItem">
+      <label for="timer-duration" class="label">Duration</label>
+      <input name="timer-duration" type="number" class="input input-text" value="{{displayDuration}}"/>
+    </div>
+
+    <div class="formItem">
+      <label fomr="timer-time" class="label">Begin at</label>
+      <input name="timer-time" type="time" class="input input-text" value="{{timer.time}}"/>
+    </div>
+
+    <div class="formItem">
+      <label for="timer-days" class="label">Every x days</label>
+      <input name="timer-days" type="number" class="input input-text" value="{{timer.days}}"/>
+    </div>
+
+    <div class="buttonContainer">
+      <button type="submit" class="button button-primary button-icon buttonContainer--button">
+        Save
+      </button>
+      <a href="{{pathFor 'sprinklerList'}}" class="button button-secondary button-noBorder buttonContainer--button">Cancel</a>
+    </div>
+  </form>
+</template>

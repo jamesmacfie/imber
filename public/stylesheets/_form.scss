@@ -1,0 +1,62 @@
+/**
+ * CONTENTS
+ *
+ * Layout..............Different form layouts
+ * Labels..............Our form labels
+ * Inputs..............Input styling
+ */
+
+/*------------------------------------*\
+    #LAYOUT
+\*------------------------------------*/
+
+.form, .formItem {
+  width: 100%;
+}
+
+.formItem {
+  margin-bottom: $mainPadding;
+}
+
+/*------------------------------------*\
+    #LABELS
+\*------------------------------------*/
+
+.label {
+  color: $primary;
+  display: block;
+  font-size: $bodyTextSize;
+}
+
+/*------------------------------------*\
+    #INPUTS
+\*------------------------------------*/
+
+.input, .select {
+  background: none;
+  border: none;
+  border-bottom: 1px solid $primary;
+  color: #fff;
+  font-size: $inputFontSize;
+  margin-bottom: $mainPadding;
+  margin-top: $mainPadding / 2;
+  width: 100%;
+
+  &:focus, &:active {
+    outline: none;
+  }
+}
+
+.input-text {
+  height: $inputHeight;
+}
+
+.input-textarea {
+  min-height: $inputHeight * 4;
+}
+
+.select {
+  border-radius: 0;
+  -webkit-appearance: none;
+  -webkit-border-radius: 0px;
+}

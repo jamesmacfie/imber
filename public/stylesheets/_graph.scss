@@ -1,0 +1,63 @@
+/**
+ * CONTENTS
+ *
+ * Graph...............Details for the active timer countdown graph
+ * Text................Text for the homepage active graph
+ * Buttons.............Buttons for the homepage graph
+ */
+
+/*------------------------------------*\
+    #GRAPH
+\*------------------------------------*/
+.graph {}
+
+/*------------------------------------*\
+    #TEXT
+\*------------------------------------*/
+
+.graph--sprinkerTitle {
+  color: $primary;
+  display: block;
+  height: $sprinkerNameHeight;
+  line-height: $sprinkerNameHeight;
+  margin: 0 auto;
+  position: relative;
+  text-align: center;
+  width: $sprinkerNameWidth;
+
+  &:after, &:before {
+    background-color: $tertiary;
+    content: '';
+    height: $sprinkerNameBarHeight;
+    position: absolute;
+    top: ($sprinkerNameHeight / 2) - ($sprinkerNameBarHeight / 2);
+    width: $sprinkerNameBarWidth;
+  }
+
+  &:before {
+    left: 0;
+  }
+
+  &:after {
+    right: 0;
+  }
+}
+
+.graph--sprinkerName {
+  font-family: $bebas;
+  font-size: $alphaTextSize * 1.5;
+  margin: 0;
+  text-align: center;
+}
+
+.graph--notesTitle {
+  margin-top: $mainPadding * 2;
+}
+
+/*------------------------------------*\
+    #BUTTONS
+\*------------------------------------*/
+
+.graph--buttonContainer {
+  padding-bottom: $mainPadding * 2;
+}

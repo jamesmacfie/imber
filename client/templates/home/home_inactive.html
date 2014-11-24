@@ -1,0 +1,8 @@
+<template name="homeInactive">
+    <h4 class="history--title">Nothing's happening right now</h4>
+    <p>None of your sprinklers have been active {{lastActiveStatusDescription.description}}.</p>
+    <h4 class="history--subtitle">Here's the last few events</h4>
+    {{#each history}}
+      {{> historyItem}}
+    {{/each}}
+</template>

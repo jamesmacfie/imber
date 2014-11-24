@@ -1,0 +1,92 @@
+/**
+ * CONTENTS
+ *
+ * Base................The base button
+ * Modifiers...........Button class modifiers
+ * Container...........A container for holding a couple of buttons
+ * Modifiers...........Button class modifications
+ * Icons...............Modifiers for buttons with icons
+ */
+
+/*------------------------------------*\
+    #BUTTON
+\*------------------------------------*/
+
+.button {
+  background-color: transparent;
+  border-radius: $buttonBorderRadius;
+  border-width: 2px;
+  border-style: solid;
+  cursor: pointer;
+  display: inline-block;
+  height: $buttonHeight;
+  font-size: $cappaTextSize;
+  line-height: $buttonHeight - 4; // TODO, WTF is this?
+  padding: 0 $mainPadding;
+  position: relative;
+}
+
+/*------------------------------------*\
+    #BUTTON
+\*------------------------------------*/
+
+.button-primary {
+  color: $primary;
+  border-color: $primary;
+}
+
+.button-secondary {
+  color: $secondary;
+  border-color: $secondary;
+}
+
+/*------------------------------------*\
+    #CONTAINER
+\*------------------------------------*/
+.buttonContainer {
+  display: flex;
+  width: 100%;
+}
+
+
+.buttonContainer--button {
+  width: 50%;
+
+  &:first-child {
+    margin-right: $mainPadding / 2;
+  }
+
+  &:nth-child(2n) {
+    margin-left: $mainPadding / 2
+  }
+}
+
+
+/*------------------------------------*\
+    #ICONS
+\*------------------------------------*/
+.button-icon {
+  padding-left: $iconSize;
+}
+
+.button--iconHolder {
+  left: 0;
+  position: absolute;
+  top: ($buttonHeight - $iconSize) / 2;
+
+  // Not that cool
+  .icon {
+    padding-top: 0;
+  }
+}
+
+/*------------------------------------*\
+    #BUTTON
+\*------------------------------------*/
+
+.button-noBorder {
+  border-bottom: none;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+}

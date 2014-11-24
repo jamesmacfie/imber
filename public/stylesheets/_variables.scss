@@ -1,0 +1,87 @@
+/**
+ * CONTENTS
+ *
+ * Colours...............Common colours used throughout the site
+ * Fonts.................Font groupings
+ * Layout................Useful site layout sizes, breakpoints etc
+ * Text..................Sizes etc for site wide text state
+ * Navigation............The navigation that sits in the header
+ * Buttons...............Button styling
+ * Form..................Form layout
+ * Sprinklers............Details for sprinkler
+ * Graph.................The active timer graph on the home screen
+ */
+
+/*------------------------------------*\
+    #COLOURS
+\*------------------------------------*/
+$background: #262930;
+
+$primary: #04a3d0;
+$secondary: #45baa6;
+$tertiary: #1f2228;
+
+$text: #fff;
+
+/*------------------------------------*\
+    #FONTS
+\*------------------------------------*/
+$sansSerif: 'Open Sans', helvetica, arial, sans-serif;
+$bebas: 'bebas';
+
+/*------------------------------------*\
+    #LAYOUT
+\*------------------------------------*/
+$mainPadding: 10px;
+$iconSize: 40px;
+$iconSmallSize: iconSize / 2;
+
+/*------------------------------------*\
+    #TEXT
+\*------------------------------------*/
+$alphaTextSize: 32px;
+$betaTextSize: 24px;
+$cappaTextSize: 18px;
+$deltaTextSize: 16px;
+$bodyTextSize: 14px;
+
+/*------------------------------------*\
+    #HEADER
+\*------------------------------------*/
+
+$headerBackgroundColor: $text;
+$headerHeight: 50px;
+
+/*------------------------------------*\
+    #NAVIGATION
+\*------------------------------------*/
+
+$activeItemIndicatorSize: 10px;
+
+/*------------------------------------*\
+    #BUTTONS
+\*------------------------------------*/
+$buttonBorderRadius: 3px;
+$buttonBorderWidth: 2px;
+$buttonHeight: 52px;
+
+/*------------------------------------*\
+    #FORM
+\*------------------------------------*/
+
+$inputHeight: 30px;
+$inputFontSize: $bodyTextSize + 2;
+
+/*------------------------------------*\
+    #SPRINKLERS
+\*------------------------------------*/
+$sprinklerIconHolderWidth: 100px;
+$sprinklerActionHolderHeight: 120px;
+
+/*------------------------------------*\
+    #GRAPH
+\*------------------------------------*/
+$sprinkerNameHeight: 30px;
+$sprinkerNameWidth: 200px;
+$sprinkerNameBarHeight: 4px;
+$sprinkerNameBarWidth: 50px;

@@ -1,0 +1,484 @@
+/**
+ * CONTENTS
+ *
+ * Colours...............Common colours used throughout the site
+ * Fonts.................Font groupings
+ * Layout................Useful site layout sizes, breakpoints etc
+ * Text..................Sizes etc for site wide text state
+ * Navigation............The navigation that sits in the header
+ * Buttons...............Button styling
+ * Form..................Form layout
+ * Sprinklers............Details for sprinkler
+ * Graph.................The active timer graph on the home screen
+ */
+/*------------------------------------*\
+    #COLOURS
+\*------------------------------------*/
+/*------------------------------------*\
+    #FONTS
+\*------------------------------------*/
+/*------------------------------------*\
+    #LAYOUT
+\*------------------------------------*/
+/*------------------------------------*\
+    #TEXT
+\*------------------------------------*/
+/*------------------------------------*\
+    #HEADER
+\*------------------------------------*/
+/*------------------------------------*\
+    #NAVIGATION
+\*------------------------------------*/
+/*------------------------------------*\
+    #BUTTONS
+\*------------------------------------*/
+/*------------------------------------*\
+    #FORM
+\*------------------------------------*/
+/*------------------------------------*\
+    #SPRINKLERS
+\*------------------------------------*/
+/*------------------------------------*\
+    #GRAPH
+\*------------------------------------*/
+/* Bebas */
+@font-face {
+  font-family: 'bebas';
+  src: url("../fonts/BebasNeue-webfont.eot");
+  src: url("../fonts/BebasNeue-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/BebasNeue-webfont.woff") format("woff"), url("../fonts/BebasNeue-webfont.ttf") format("truetype"), url("../fonts/BebasNeue-webfont.svg#bebas_neueregular") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+/**
+ * Here's any sort of default base styling the site has. The vast majority of changes
+ * should not be on a base element, like here, but in classes exposed in other files
+ */
+*, *:before, *:after {
+  box-sizing: border-box; }
+
+body {
+  background-color: #262930;
+  color: #fff;
+  font-family: "Open Sans", helvetica, arial, sans-serif;
+  font-weight: 100;
+  margin: 0;
+  -webkit-font-smoothing: antialiased; }
+
+a {
+  color: #04a3d0;
+  text-decoration: none; }
+
+em {
+  font-style: italic; }
+
+hr {
+  border-color: #1f2228;
+  width: 100%; }
+
+strong {
+  font-weight: bold; }
+
+label {
+  cursor: pointer; }
+
+main {
+  padding: 10px;
+  padding-top: 100px; }
+
+/* Base text setup */
+h1, h2, h3 {
+  color: #fff;
+  font-family: "bebas"; }
+
+h1 {
+  font-size: 32px; }
+
+h2 {
+  font-size: 24px; }
+
+h3 {
+  font-size: 18px; }
+
+h4 {
+  color: #04a3d0;
+  font-size: 14px;
+  font-weight: 100;
+  margin: 0.5em 0;
+  text-transform: uppercase; }
+
+p {
+  font-size: 14px; }
+
+/**
+ * CONTENTS
+ *
+ * Layout..............The base layout for an icon
+ * Modifiers...........Icon modifier classes
+ * Size................Alternate icon sizes
+ */
+/*------------------------------------*\
+    #LAYOUT
+\*------------------------------------*/
+.iconHolder {
+  display: inline-block;
+  min-height: 40px;
+  position: relative;
+  min-width: 40px; }
+
+.iconHolder-circle {
+  background-color: #04a3d0;
+  border-radius: 50%; }
+
+.icon {
+  box-sizing: content-box;
+  fill: #fff;
+  /* TODO - what is this hardcoded shit? */
+  padding-left: calc(50% - 12px);
+  padding-top: calc(50% - 12px); }
+
+/*------------------------------------*\
+    #MODIFIERS
+\*------------------------------------*/
+.icon-default {
+  color: #fff;
+  fill: #fff; }
+
+.icon-primary {
+  color: #04a3d0;
+  fill: #04a3d0; }
+
+.icon-secondary {
+  color: #45baa6;
+  fill: #45baa6; }
+
+/*------------------------------------*\
+    #SIZE
+\*------------------------------------*/
+/**
+ * CONTENTS
+ *
+ * Layout................How the header is laid out
+ * Text..................Any text that lives in the header
+ */
+/*------------------------------------*\
+    #LAYOUT
+\*------------------------------------*/
+.header-app {
+  background-color: #fff;
+  height: 50px;
+  left: 0;
+  position: fixed;
+  right: 0;
+  text-align: center;
+  width: 100vw;
+  z-index: 1; }
+
+/*------------------------------------*\
+    #TEXT
+\*------------------------------------*/
+.header-app--title {
+  color: #262930;
+  line-height: 50px;
+  font-size: 28px;
+  margin: 0; }
+
+/**
+ * CONTENTS
+ *
+ * Layout..............Different form layouts
+ * Labels..............Our form labels
+ * Inputs..............Input styling
+ */
+/*------------------------------------*\
+    #LAYOUT
+\*------------------------------------*/
+.form, .formItem {
+  width: 100%; }
+
+.formItem {
+  margin-bottom: 10px; }
+
+/*------------------------------------*\
+    #LABELS
+\*------------------------------------*/
+.label {
+  color: #04a3d0;
+  display: block;
+  font-size: 14px; }
+
+/*------------------------------------*\
+    #INPUTS
+\*------------------------------------*/
+.input, .select {
+  background: none;
+  border: none;
+  border-bottom: 1px solid #04a3d0;
+  color: #fff;
+  font-size: 16px;
+  margin-bottom: 10px;
+  margin-top: 5px;
+  width: 100%; }
+  .input:focus, .input:active, .select:focus, .select:active {
+    outline: none; }
+
+.input-text {
+  height: 30px; }
+
+.input-textarea {
+  min-height: 120px; }
+
+.select {
+  border-radius: 0;
+  -webkit-appearance: none;
+  -webkit-border-radius: 0px; }
+
+/**
+ * CONTENTS
+ *
+ * Layout................How the navigation is laid out
+ * Nav...................The details of the navigation implementation
+ */
+/*------------------------------------*\
+    #LAYOUT
+\*------------------------------------*/
+.nav-main {
+  background-color: #04a3d0;
+  height: 50px;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 50px;
+  z-index: 1; }
+
+/*------------------------------------*\
+    #NAV
+\*------------------------------------*/
+.horizontalNav {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0; }
+
+.horizontalNav--item {
+  display: inline-block;
+  flex-grow: 1;
+  text-align: center; }
+
+.horizontalNav--item-active {
+  position: relative; }
+  .horizontalNav--item-active:after {
+    background-color: #262930;
+    bottom: -5px;
+    content: '';
+    height: 10px;
+    left: calc(50% - 5px);
+    position: absolute;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    width: 10px; }
+
+.nav-main--link {
+  color: #fff;
+  font-family: 'bebas';
+  font-size: 24px;
+  line-height: 50px; }
+
+/**
+ * CONTENTS
+ *
+ * Base................The base button
+ * Modifiers...........Button class modifiers
+ * Container...........A container for holding a couple of buttons
+ * Modifiers...........Button class modifications
+ * Icons...............Modifiers for buttons with icons
+ */
+/*------------------------------------*\
+    #BUTTON
+\*------------------------------------*/
+.button {
+  background-color: transparent;
+  border-radius: 3px;
+  border-width: 2px;
+  border-style: solid;
+  cursor: pointer;
+  display: inline-block;
+  height: 52px;
+  font-size: 18px;
+  line-height: 48px;
+  padding: 0 10px;
+  position: relative; }
+
+/*------------------------------------*\
+    #BUTTON
+\*------------------------------------*/
+.button-primary {
+  color: #04a3d0;
+  border-color: #04a3d0; }
+
+.button-secondary {
+  color: #45baa6;
+  border-color: #45baa6; }
+
+/*------------------------------------*\
+    #CONTAINER
+\*------------------------------------*/
+.buttonContainer {
+  display: flex;
+  width: 100%; }
+
+.buttonContainer--button {
+  width: 50%; }
+  .buttonContainer--button:first-child {
+    margin-right: 5px; }
+  .buttonContainer--button:nth-child(2n) {
+    margin-left: 5px; }
+
+/*------------------------------------*\
+    #ICONS
+\*------------------------------------*/
+.button-icon {
+  padding-left: 40px; }
+
+.button--iconHolder {
+  left: 0;
+  position: absolute;
+  top: 6px; }
+  .button--iconHolder .icon {
+    padding-top: 0; }
+
+/*------------------------------------*\
+    #BUTTON
+\*------------------------------------*/
+.button-noBorder {
+  border-bottom: none;
+  border-left: none;
+  border-right: none;
+  border-top: none; }
+
+/**
+ * CONTENTS
+ *
+ * Text................Text details specifically for the history page
+ * Item................History item elements
+ */
+/*------------------------------------*\
+    #TEXT
+\*------------------------------------*/
+.history--subtitle {
+  margin: 2em 0 1em; }
+
+/*------------------------------------*\
+    #ITEM
+\*------------------------------------*/
+.historyItemDetails {
+  margin-bottom: 10px;
+  min-height: 40px; }
+
+.historyItemDetails--icon {
+  float: left;
+  margin-right: 20px; }
+
+.historyItemDetails-description {
+  margin: 0; }
+
+/**
+ * CONTENTS
+ *
+ * Layout..............The layout of sprinkler items
+ * Text................Any text specific styles
+ * Icons...............The icons for the sprinkler
+ */
+/*------------------------------------*\
+    #LAYOUT
+\*------------------------------------*/
+.sprinklerContainer {
+  border-bottom: 1px solid #1f2228;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  position: relative; }
+  .sprinklerContainer:first-child {
+    padding-top: 20px; }
+
+.sprinklerActionHolder {
+  position: absolute;
+  left: 0;
+  top: 120px; }
+
+.sprinklerDetails {
+  min-height: 140px;
+  padding-left: 100px; }
+
+/*------------------------------------*\
+    #TEXT
+\*------------------------------------*/
+.sprinklerName {
+  margin-bottom: 20px; }
+
+.sprinklerState {
+  color: #45baa6; }
+
+.sprinklerNotes {
+  margin-bottom: 20px; }
+
+/*------------------------------------*\
+    #ICONS
+\*------------------------------------*/
+.sprinker--iconHolder {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100px; }
+  .sprinker--iconHolder .icon {
+    height: 60px;
+    padding-left: calc(50% - 32px);
+    width: 60px; }
+
+/**
+ * CONTENTS
+ *
+ * Graph...............Details for the active timer countdown graph
+ * Text................Text for the homepage active graph
+ * Buttons.............Buttons for the homepage graph
+ */
+/*------------------------------------*\
+    #GRAPH
+\*------------------------------------*/
+/*------------------------------------*\
+    #TEXT
+\*------------------------------------*/
+.graph--sprinkerTitle {
+  color: #04a3d0;
+  display: block;
+  height: 30px;
+  line-height: 30px;
+  margin: 0 auto;
+  position: relative;
+  text-align: center;
+  width: 200px; }
+  .graph--sprinkerTitle:after, .graph--sprinkerTitle:before {
+    background-color: #1f2228;
+    content: '';
+    height: 4px;
+    position: absolute;
+    top: 13px;
+    width: 50px; }
+  .graph--sprinkerTitle:before {
+    left: 0; }
+  .graph--sprinkerTitle:after {
+    right: 0; }
+
+.graph--sprinkerName {
+  font-family: "bebas";
+  font-size: 48px;
+  margin: 0;
+  text-align: center; }
+
+.graph--notesTitle {
+  margin-top: 20px; }
+
+/*------------------------------------*\
+    #BUTTONS
+\*------------------------------------*/
+.graph--buttonContainer {
+  padding-bottom: 20px; }
+
+/*# sourceMappingURL=styles.css.map */

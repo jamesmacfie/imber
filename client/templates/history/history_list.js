@@ -1,0 +1,1 @@
+Template.historyList.helpers(	{		history: function() {			return History.find({},				{					sort: {						timeStamp : -1					},					limit: 50				}			);		}	});

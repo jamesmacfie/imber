@@ -1,0 +1,29 @@
+/* Base text setup */
+h1, h2, h3 {
+    color: $text;
+    font-family: $bebas;
+}
+
+h1 {
+    font-size: $alphaTextSize;
+}
+
+h2 {
+    font-size: $betaTextSize;
+}
+
+h3 {
+    font-size: $cappaTextSize;
+}
+
+h4 {
+    color: $primary;
+    font-size: $bodyTextSize;
+    font-weight: 100;
+    margin: 0.5em 0;
+    text-transform: uppercase;
+}
+
+p {
+    font-size: $bodyTextSize;
+}

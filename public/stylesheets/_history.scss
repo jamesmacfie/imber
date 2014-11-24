@@ -1,0 +1,32 @@
+/**
+ * CONTENTS
+ *
+ * Text................Text details specifically for the history page
+ * Item................History item elements
+ */
+
+/*------------------------------------*\
+    #TEXT
+\*------------------------------------*/
+
+.history--subtitle {
+    margin: 2em 0 1em;
+}
+
+/*------------------------------------*\
+    #ITEM
+\*------------------------------------*/
+
+.historyItemDetails {
+    margin-bottom: $mainPadding;
+    min-height: $iconSize;
+}
+
+.historyItemDetails--icon {
+  float: left;
+  margin-right: $mainPadding * 2;
+}
+
+.historyItemDetails-description {
+    margin: 0;
+}

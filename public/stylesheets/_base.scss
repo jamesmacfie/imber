@@ -1,0 +1,44 @@
+/**
+ * Here's any sort of default base styling the site has. The vast majority of changes
+ * should not be on a base element, like here, but in classes exposed in other files
+ */
+
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: $background;
+    color: $text;
+    font-family: $sansSerif;
+    font-weight: 100;
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+}
+
+a {
+    color: $primary;
+    text-decoration: none;
+}
+
+em {
+    font-style: italic;
+}
+
+hr {
+  border-color: $tertiary;
+  width: 100%;
+}
+
+strong {
+    font-weight: bold;
+}
+
+label {
+    cursor: pointer;
+}
+
+main {
+    padding: $mainPadding;
+    padding-top: $headerHeight * 2;
+}

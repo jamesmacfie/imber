@@ -1,0 +1,29 @@
+<template name="homeActive">
+  <div class="graph">
+    <div style="height: 200px;"></div>
+  </div>
+  <h4 class="graph--sprinkerTitle">Sprinkler</h4>
+  <h1 class="sprinklerName graph--sprinkerName">{{activeSprinkler.name}}</h1>
+  <hr/>
+  <h4 class="graph--notesTitle">Notes</h4>
+  <p class="sprinklerNotes">{{activeSprinkler.notes}}</p>
+  <div class="buttonContainer graph--buttonContainer">
+    {{#if isActive}}
+      <div class="button button-primary button-icon buttonContainer--button js-pauseSprinkler">
+        <span class="iconHolder button--iconHolder">{{ > Template.dynamic template="iconPause" data=primarySprinklerData}}</span>Pause
+      </div>
+      <div class="button button-secondary button-icon buttonContainer--button js-resetSprinkler">
+        <span class="iconHolder button--iconHolder">{{ > Template.dynamic template="iconReset" data=secondarySprinklerData}}</span>Reset
+      </div>
+    {{/if}}
+    {{#if isPaused}}
+      <div class="button button-primary button-icon buttonContainer--button js-resumeSprinkler">
+        <span class="iconHolder button--iconHolder">{{ > Template.dynamic template="iconStart" data=primarySprinklerData}}</span>Resume
+      </div>
+      <div class="button button-primary button-icon buttonContainer--button js-stopSprinkler">
+        <span class="iconHolder button--iconHolder">{{ > Template.dynamic template="iconStop" data=primarySprinklerData}}</span>Stop
+      </div>
+    {{/if}}
+  </div>
+  <hr/>
+</template>

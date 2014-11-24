@@ -1,0 +1,66 @@
+/**
+ * CONTENTS
+ *
+ * Layout..............The layout of sprinkler items
+ * Text................Any text specific styles
+ * Icons...............The icons for the sprinkler
+ */
+
+/*------------------------------------*\
+    #LAYOUT
+\*------------------------------------*/
+.sprinklerContainer {
+  border-bottom: 1px solid $tertiary;
+  margin-bottom: $mainPadding * 2;
+  padding-bottom: $mainPadding  * 2;
+  position: relative;
+
+  &:first-child {
+    padding-top: $mainPadding  * 2;
+  }
+}
+
+.sprinklerActionHolder {
+  position: absolute;
+  left: 0;
+  top: $sprinklerActionHolderHeight;
+}
+
+.sprinklerDetails {
+  min-height: $sprinklerActionHolderHeight + ($mainPadding * 2);
+  padding-left: $sprinklerIconHolderWidth;
+}
+
+
+/*------------------------------------*\
+    #TEXT
+\*------------------------------------*/
+.sprinklerName {
+  margin-bottom: $mainPadding * 2;
+}
+
+.sprinklerState {
+  color: $secondary;
+}
+
+.sprinklerNotes {
+  margin-bottom: $mainPadding * 2;
+}
+
+/*------------------------------------*\
+    #ICONS
+\*------------------------------------*/
+
+.sprinker--iconHolder {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: $sprinklerIconHolderWidth;
+
+  // Hmmm. Nesting. And hard coded values :(
+  .icon {
+    height: $iconSize + 20;
+    padding-left: calc(50% - 32px);
+    width: $iconSize + 20;
+  }
+}

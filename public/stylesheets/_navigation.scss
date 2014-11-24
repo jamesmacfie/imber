@@ -1,0 +1,61 @@
+/**
+ * CONTENTS
+ *
+ * Layout................How the navigation is laid out
+ * Nav...................The details of the navigation implementation
+ */
+
+/*------------------------------------*\
+    #LAYOUT
+\*------------------------------------*/
+
+.nav-main {
+    background-color: $primary;
+    height: $headerHeight;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: $headerHeight;
+    z-index: 1;
+}
+
+/*------------------------------------*\
+    #NAV
+\*------------------------------------*/
+.horizontalNav {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.horizontalNav--item {
+    display: inline-block;
+    flex-grow: 1;
+    text-align: center;
+}
+
+.horizontalNav--item-active {
+    position: relative;
+
+    &:after {
+        $halfSize: $activeItemIndicatorSize / 2;
+
+        background-color: $background;
+        bottom: 0 - $halfSize;
+        content: '';
+        height: $activeItemIndicatorSize;
+        left: calc(50% - 5px); //TODO - fix hardcoded value here
+        position: absolute;
+        transform: rotate(45deg);
+          -webkit-transform: rotate(45deg);
+        width: $activeItemIndicatorSize;
+    }
+}
+
+.nav-main--link {
+    color: $text;
+    font-family: 'bebas';
+    font-size: $betaTextSize;
+    line-height: $headerHeight;
+}

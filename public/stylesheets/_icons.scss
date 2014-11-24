@@ -1,0 +1,54 @@
+/**
+ * CONTENTS
+ *
+ * Layout..............The base layout for an icon
+ * Modifiers...........Icon modifier classes
+ * Size................Alternate icon sizes
+ */
+
+/*------------------------------------*\
+    #LAYOUT
+\*------------------------------------*/
+
+.iconHolder {
+    display: inline-block;
+    min-height: $iconSize;
+    position: relative;
+    min-width: $iconSize;
+}
+
+.iconHolder-circle {
+  background-color: $primary;
+  border-radius: 50%;
+}
+
+.icon {
+  box-sizing: content-box;
+  fill: #fff;
+
+  /* TODO - what is this hardcoded shit? */
+  padding-left: calc(50% - 12px);// Hmmm.
+  padding-top: calc(50% - 12px);
+}
+
+/*------------------------------------*\
+    #MODIFIERS
+\*------------------------------------*/
+.icon-default {
+  color: #fff;
+  fill: #fff;
+}
+
+.icon-primary {
+  color: $primary;
+  fill: $primary;
+}
+
+.icon-secondary {
+  color: $secondary;
+  fill: $secondary;
+}
+
+/*------------------------------------*\
+    #SIZE
+\*------------------------------------*/

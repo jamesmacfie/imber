@@ -1,0 +1,1 @@
+Meteor.publish('history', function() {        return History.find({}, {            limit: 50        });    });Meteor.publish('sprinklers', function() {        return Sprinklers.find();    });

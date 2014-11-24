@@ -1,0 +1,1 @@
+Template.sprinklerList.helpers(	{		sprinklers: function() {			return Sprinklers.find();		}	});

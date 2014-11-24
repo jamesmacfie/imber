@@ -1,0 +1,32 @@
+/**
+ * CONTENTS
+ *
+ * Layout................How the header is laid out
+ * Text..................Any text that lives in the header
+ */
+
+/*------------------------------------*\
+    #LAYOUT
+\*------------------------------------*/
+
+.header-app {
+    background-color: $headerBackgroundColor;
+    height: $headerHeight;
+    left: 0;
+    position: fixed;
+    right: 0;
+    text-align: center;
+    width: 100vw;
+    z-index: 1;
+}
+
+/*------------------------------------*\
+    #TEXT
+\*------------------------------------*/
+
+.header-app--title {
+    color: $background;
+    line-height: $headerHeight;
+    font-size: $alphaTextSize - 4;
+    margin: 0;
+}

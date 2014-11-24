@@ -1,0 +1,1 @@
+Template.home.helpers(	{		activeSprinkler: function() {			return Sprinklers.activeSprinkler();		}	});
