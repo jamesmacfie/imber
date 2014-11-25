@@ -126,14 +126,16 @@ p {
 
 .iconHolder-circle {
   background-color: #04a3d0;
-  border-radius: 50%; }
+  border-radius: 50%;
+  /* TODO - what is this hardcoded shit? */ }
+  .iconHolder-circle .icon {
+    padding-top: calc(50% - 12px); }
 
 .icon {
   box-sizing: content-box;
   fill: #fff;
   /* TODO - what is this hardcoded shit? */
-  padding-left: calc(50% - 12px);
-  padding-top: calc(50% - 12px); }
+  padding-left: calc(50% - 12px); }
 
 /*------------------------------------*\
     #MODIFIERS
@@ -336,7 +338,8 @@ p {
     #ICONS
 \*------------------------------------*/
 .button-icon {
-  padding-left: 40px; }
+  padding-left: 40px;
+  text-align: initial; }
 
 .button--iconHolder {
   left: 0;
@@ -401,10 +404,10 @@ p {
 .sprinklerActionHolder {
   position: absolute;
   left: 0;
-  top: 120px; }
+  top: 90px; }
 
 .sprinklerDetails {
-  min-height: 140px;
+  min-height: 110px;
   padding-left: 100px; }
 
 /*------------------------------------*\
@@ -425,7 +428,6 @@ p {
 .sprinker--iconHolder {
   position: absolute;
   left: 0;
-  top: 0;
   width: 100px; }
   .sprinker--iconHolder .icon {
     height: 60px;

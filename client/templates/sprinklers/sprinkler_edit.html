@@ -39,6 +39,7 @@
 
     <div class="buttonContainer">
       <button type="submit" class="button button-primary button-icon buttonContainer--button">
+        <span class="iconHolder button--iconHolder">{{ > Template.dynamic template="iconSave" data=primarySprinklerData}}</span>
         Save
       </button>
       <a href="{{pathFor 'sprinklerList'}}" class="button button-secondary button-noBorder buttonContainer--button">Cancel</a>

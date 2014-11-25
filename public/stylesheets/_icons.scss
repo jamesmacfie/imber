@@ -20,6 +20,11 @@
 .iconHolder-circle {
   background-color: $primary;
   border-radius: 50%;
+
+  /* TODO - what is this hardcoded shit? */
+  .icon {
+    padding-top: calc(50% - 12px);
+  }
 }
 
 .icon {
@@ -28,7 +33,6 @@
 
   /* TODO - what is this hardcoded shit? */
   padding-left: calc(50% - 12px);// Hmmm.
-  padding-top: calc(50% - 12px);
 }
 
 /*------------------------------------*\
