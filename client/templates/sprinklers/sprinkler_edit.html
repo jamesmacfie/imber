@@ -37,9 +37,20 @@
       <input name="timer-days" type="number" class="input input-text" value="{{timer.days}}"/>
     </div>
 
+    <h3>Physical sprinkler details</h3>
+
+    <div class="formItem">
+      <label for="connection" class="label">Connection</label>
+      <select class="select" name="connection">
+        {{#each connections}}
+          {{> selectOption}}
+        {{/each}}
+      </select>
+    </div>
+
     <div class="buttonContainer">
       <button type="submit" class="button button-primary button-icon buttonContainer--button">
-        <span class="iconHolder button--iconHolder">{{ > Template.dynamic template="iconSave" data=primarySprinklerData}}</span>
+        <span class="iconHolder button--iconHolder">{{ > Template.dynamic template="iconSave" data=primaryIcon}}</span>
         Save
       </button>
       <a href="{{pathFor 'sprinklerList'}}" class="button button-secondary button-noBorder buttonContainer--button">Cancel</a>

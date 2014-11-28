@@ -1,0 +1,30 @@
+{
+    "node": true,
+    "browser": true,
+    "esnext": true,
+    "bitwise": true,
+    "curly": true,
+    "eqeqeq": true,
+    "immed": true,
+    "latedef": true,
+    "newcap": true,
+    "noarg": true,
+    "quotmark": "single",
+    "regexp": true,
+    "undef": true,
+    "unused": true,
+    "strict": true,
+    "trailing": true,
+    "smarttabs": true,
+    "jquery": true,
+    "globals": {
+        "define": false,
+        "require": false,
+        "Meteor": false,
+        "Template": false,
+        "Sprinklers": false,
+        "Router": false,
+        "History": false,
+        "moment": false
+    }
+}
