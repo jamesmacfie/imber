@@ -25,6 +25,8 @@
         "Sprinklers": false,
         "Router": false,
         "History": false,
-        "moment": false
+        "moment": false,
+        "describe": false,
+        "it": false
     }
 }
