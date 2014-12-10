@@ -21,6 +21,7 @@
         "define": false,
         "require": false,
         "Meteor": false,
+        "Handlebars": false,
         "Template": false,
         "Sprinklers": false,
         "Router": false,
