@@ -1,1 +1,1 @@
-Template.historyList.helpers(	{		history: function() {			return History.find({},				{					sort: {						timeStamp : -1					},					limit: 50				}			);		}	});
+/* Helper functions for the historyList template */'use strict';Template.historyList.helpers(	{		/*		 * Returns the last 50 history records sorted by date (desc)		 */		history: function() {			return History.find({},				{					sort: {						timeStamp : -1					},					limit: 50				}			);		}	});
