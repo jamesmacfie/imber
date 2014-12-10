@@ -42,6 +42,23 @@ Meteor.startup(function () {
 			});
 
 			return returnArr;
+		},
+
+		/* Need to consolidate these two functions - the only differnece is that this
+		 * doesn't return the connection details*/
+		checkSprinklerStatus: function() {
+			var sprinklers = Sprinklers.find(),
+				returnArr = [];
+
+			sprinklers.forEach(function(s) {
+				returnArr.push({
+					id: s._id,
+					name: s.name,
+					status: s.status
+				});
+			});
+
+			return returnArr;
 		}
 	});
 
