@@ -1,6 +1,6 @@
-/* Helper functions that abstract away navigation details */
-
 'use strict';
+
+/* Helper functions that abstract away navigation details */
 
 /*
  * If the current route is active, return the CSS class that displays the active state
