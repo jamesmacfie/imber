@@ -24,6 +24,7 @@
         "Handlebars": false,
         "Template": false,
         "Sprinklers": false,
+        "Session": false,
         "Router": false,
         "History": false,
         "moment": false,
