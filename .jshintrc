@@ -21,6 +21,7 @@
         "define": false,
         "require": false,
         "Meteor": false,
+        "Mongo": false,
         "Handlebars": false,
         "Template": false,
         "Sprinklers": false,
