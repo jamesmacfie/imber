@@ -1,1 +1,1 @@
-Meteor.publish('history', function() {        return History.find({}, {            limit: 50        });    });Meteor.publish('sprinklers', function() {        return Sprinklers.find();    });
+'use strict';/* What we publish to the client*//* * Only send the last 50 history items to the client */Meteor.publish('history', function() {		return History.find({},			{				sort: {					timeStamp : -1				},				limit: 50			}		);	});/* * Send all sprinklers to the client */Meteor.publish('sprinklers', function() {		return Sprinklers.find();	});
