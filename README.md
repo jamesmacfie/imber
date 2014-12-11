@@ -7,6 +7,8 @@ By itself this app won't do much as it requires a second part which lives at the
 [Imber Remote](http://github.com/jamesmacfie/imber-remote). This second part also requires
 a bit of hardware which is documented in the repo's readme.
 
+![](demo.gif)
+
 ## Installation
 
 You'll want meteor installed on your system
