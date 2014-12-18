@@ -79,13 +79,24 @@ Meteor.startup(function () {
 	function checkSingleSprinklerSchedule(sprinkler) {
 		var time = sprinkler.timer.time,
 			duration = sprinkler.timer.duration,
+			days = sprinkler.timer.days,
+			lastStopDate = sprinkler.timer.lastStopDate,
 			status = sprinkler.status,
 			timeSeperator = time.indexOf(':'),
 			hour = time.slice(0, timeSeperator),
 			minute = time.slice(timeSeperator + 1, time.length),
 			momentNow = new moment(new Date()),
 			momentStart = new moment(new Date()),
-			momentEnd = new moment(new Date());
+			momentEnd = new moment(new Date()),
+			momentLastStop = new moment(lastStopDate),
+			dayDiff;
+
+		dayDiff = days - momentLastStop.diff(momentNow, 'd');
+
+		if (dayDiff < days) {
+			// The number of days we have to wait haven't passed. Let's jet.
+			return;
+		}
 
 		// Set all out start/end times to be at the defined time
 		momentStart.hours(hour);
@@ -104,7 +115,7 @@ Meteor.startup(function () {
 				Sprinklers.update(sprinkler._id, {
 					$set: {
 						status: 'active',
-						'timer.lastRun': new Date(),
+						'timer.lastStartDate': new Date(),
 						currentTimer: Math.abs(momentStart.diff(momentNow, 's'))
 					}
 				});
@@ -115,7 +126,8 @@ Meteor.startup(function () {
 				// A sprinkler is active and is outside it's set time. Set it as inactive.
 				Sprinklers.update(sprinkler._id, {
 					$set: {
-						status: 'inactive'
+						status: 'inactive',
+						'timer.lastStopDate': new Date()
 					}
 				});
 			}
