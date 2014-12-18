@@ -11,8 +11,6 @@ if (typeof MochaWeb !== 'undefined') {
                     }
                 };
 
-
-                console.log(chai);
                 chai.assert.isTrue(Sprinklers.isScheduledDay(sprinkler));
             });
 
@@ -49,7 +47,7 @@ if (typeof MochaWeb !== 'undefined') {
                         }
                     };
 
-                chai.assert.isTrue(Sprinklers.isSchdeduledTime(sprinkler));
+                chai.assert.isTrue(Sprinklers.isScheduledTime(sprinkler));
             });
 
             it ('should return false when a sprinkler is due to run an hour ago', function() {
@@ -61,7 +59,7 @@ if (typeof MochaWeb !== 'undefined') {
                     }
                 };
 
-                chai.assert.isFalse(Sprinklers.isSchdeduledTime(sprinkler));
+                chai.assert.isFalse(Sprinklers.isScheduledTime(sprinkler));
             });
 
             it ('should return false when a sprinkler is due to run an hour from now', function() {
@@ -73,7 +71,7 @@ if (typeof MochaWeb !== 'undefined') {
                     }
                 };
 
-                chai.assert.isFalse(Sprinklers.isSchdeduledTime(sprinkler));
+                chai.assert.isFalse(Sprinklers.isScheduledTime(sprinkler));
             });
         });
 
@@ -146,6 +144,16 @@ if (typeof MochaWeb !== 'undefined') {
 
         });
 
+        describe('Sprinkler get next time', function() {
+            it ('should increase the next time by one', function() {
+                var sprinkler = {
+                    currentTimer: 1
+                };
+
+                chai.assert.strictEqual(Sprinklers.getNextTime(sprinkler), 2);
+            });
+        });
+
         describe('Sprinker duration function', function() {
             it ('should return false when a sprinkler is active and has not finised it\'s scheduled duration', function() {
                 var sprinkler = {
@@ -183,7 +191,7 @@ if (typeof MochaWeb !== 'undefined') {
                 chai.assert.isTrue(Sprinklers.durationFinished(sprinkler));
             });
 
-            it ('should throw an error when a non-active sprinkler is testsed for it\'s finished duration', function() {
+            it ('should return true when a non-active sprinkler is testsed for it\'s finished duration', function() {
                 var sprinkler = {
                     status: 'inactive',
                     timer: {
@@ -191,14 +199,34 @@ if (typeof MochaWeb !== 'undefined') {
                     },
                     currentTimer: 45
                 };
-                try {
-                    Sprinklers.durationFinished(sprinkler);
-                } catch(e) {
-                    chai.assert(true);
-                }
 
+                chai.assert.isTrue(Sprinklers.durationFinished(sprinkler));
             });
         });
+
+        // describe('Sprinkler get current timer function', function() {
+        //     it('should return the current time correctly', function() {
+        //         var sprinkler = {
+        //                 timer: {
+        //                     time: new moment().format('HH:mm'),
+        //                 }
+        //             },
+        //             nowSeconds = new moment().format('ss');
+        //
+        //         chai.assert.equal(Sprinklers.getCurrentTimer(sprinkler), nowSeconds);
+        //     });
+        //
+        //     it('should return the current time correctly', function() {
+        //         var sprinkler = {
+        //             timer: {
+        //                 time: new moment().format('HH:mm'),
+        //             }
+        //         },
+        //         nowSeconds = (new moment().format('ss') - 60);
+        //
+        //         chai.assert.equal(Sprinklers.getCurrentTimer(sprinkler), nowSeconds);
+        //     });
+        // });
 
     });
 }
