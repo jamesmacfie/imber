@@ -30,6 +30,10 @@
         "History": false,
         "moment": false,
         "describe": false,
-        "it": false
+        "it": false,
+        "MochaWeb": false,
+        "describe": false,
+        "it": false,
+        "chai": false
     }
 }
