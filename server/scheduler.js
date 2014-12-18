@@ -25,8 +25,8 @@ Meteor.startup(function () {
 	}
 
 	/*
-	 * Countsdown the timer values for a given sprinkler. It will only countdown the
-	 * the sprinkler if it's set as active. Paused states are ignored.
+	 * Checks if a sprinkler's scheduled duration has finished. Sets the sprinkler
+	 * if it has; increments the currentTimer if it hasn't
 	 *
 	 * @params {object} [sprinkler] An active/paused sprinkler
 	 */
@@ -102,69 +102,6 @@ Meteor.startup(function () {
 				});
 			}
 		}
-		//
-		// var time = sprinkler.timer.time,
-		// 	duration = sprinkler.timer.duration,
-		// 	days = sprinkler.timer.days,
-		// 	lastStopDate = sprinkler.timer.lastStopDate,
-		// 	status = sprinkler.status,
-		// 	timeSeperator = time.indexOf(':'),
-		// 	hour = time.slice(0, timeSeperator),
-		// 	minute = time.slice(timeSeperator + 1, time.length),
-		// 	momentNow = new moment(new Date()),
-		// 	momentStart = new moment(new Date()),
-		// 	momentEnd = new moment(new Date()),
-		// 	momentLastStop = new moment(lastStopDate),
-		// 	dayDiff;
-		//
-		// dayDiff = days - momentLastStop.diff(momentNow, 'd');
-		//
-		// if (dayDiff < days) {
-		// 	// The number of days we have to wait haven't passed. Let's jet.
-		// 	return;
-		// }
-		//
-		// // Set all out start/end times to be at the defined time
-		// momentStart.hours(hour);
-		// momentEnd.hours(hour);
-		// momentStart.minutes(minute);
-		// momentEnd.minutes(minute);
-		// momentStart.seconds(0);
-		// momentEnd.seconds(0);
-		// momentStart.milliseconds(0);
-		// momentEnd.milliseconds(0);
-		//
-		//
-		// // Increate the end time by our sprinklers duration (saved as seconds)
-		// momentEnd.add(duration, 's');
-		//
-		// console.log(['Checking', momentNow.format('HH:mm'), 'against', momentStart.format('HH:mm'), '&&', momentEnd.format('HH:mm')].join(' '));
-		//
-		// if ((momentStart < momentNow) && momentNow <= momentEnd) {
-		// 	if (status === 'inactive') {
-		// 		// The sprinkler is between it's scheduled time and is inactive. Set it
-		// 		// as active and set it's lastRun date. Also calculate the currentTime value
-		// 		// because we shouldn't assume this will always be 0.
-		// 		Sprinklers.update(sprinkler._id, {
-		// 			$set: {
-		// 				status: 'active',
-		// 				'timer.lastStartDate': new Date(),
-		// 				currentTimer: Math.abs(momentStart.diff(momentNow, 's'))
-		// 			}
-		// 		});
-		// 		return true;
-		// 	}
-		// } else {
-		// 	if (status === 'active') {
-		// 		// A sprinkler is active and is outside it's set time. Set it as inactive.
-		// 		Sprinklers.update(sprinkler._id, {
-		// 			$set: {
-		// 				status: 'inactive',
-		// 				'timer.lastStopDate': new Date()
-		// 			}
-		// 		});
-		// 	}
-		// }
 	}
 
 	Meteor.setInterval(checkSprinklers, 1000);
