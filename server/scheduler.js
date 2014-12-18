@@ -77,6 +77,11 @@ Meteor.startup(function () {
 			return;
 		}
 
+		// Do we even want to run this schedule?
+		if (!sprinkler.timer.active) {
+			return;
+		}
+
 		if (Sprinklers.isScheduledTime(sprinkler)) {
 			if (sprinkler.status === 'inactive') {
 				// The sprinkler is between it's scheduled time and is inactive. Set it
