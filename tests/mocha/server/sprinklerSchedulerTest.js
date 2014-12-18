@@ -146,5 +146,59 @@ if (typeof MochaWeb !== 'undefined') {
 
         });
 
+        describe('Sprinker duration function', function() {
+            it ('should return false when a sprinkler is active and has not finised it\'s scheduled duration', function() {
+                var sprinkler = {
+                    status: 'active',
+                    timer: {
+                        duration: 600
+                    },
+                    currentTimer: 45
+                };
+
+                chai.assert.isFalse(Sprinklers.durationFinished(sprinkler));
+            });
+
+            it ('should return true when a sprinkler is active and has reached it\'s scheduled duration', function() {
+                var sprinkler = {
+                    status: 'active',
+                    timer: {
+                        duration: 45
+                    },
+                    currentTimer: 45
+                };
+
+                chai.assert.isTrue(Sprinklers.durationFinished(sprinkler));
+            });
+
+            it ('should return true when a sprinkler is active and has exceeded it\'s scheduled duration', function() {
+                var sprinkler = {
+                    status: 'active',
+                    timer: {
+                        duration: 45
+                    },
+                    currentTimer: 50
+                };
+
+                chai.assert.isTrue(Sprinklers.durationFinished(sprinkler));
+            });
+
+            it ('should throw an error when a non-active sprinkler is testsed for it\'s finished duration', function() {
+                var sprinkler = {
+                    status: 'inactive',
+                    timer: {
+                        duration: 600
+                    },
+                    currentTimer: 45
+                };
+                try {
+                    Sprinklers.durationFinished(sprinkler);
+                } catch(e) {
+                    chai.assert(true);
+                }
+
+            });
+        });
+
     });
 }
