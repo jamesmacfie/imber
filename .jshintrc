@@ -20,6 +20,7 @@
     "globals": {
         "define": false,
         "require": false,
+        "App": false,
         "Meteor": false,
         "Mongo": false,
         "Handlebars": false,

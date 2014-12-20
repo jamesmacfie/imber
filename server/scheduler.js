@@ -9,28 +9,48 @@
  * sprinklers that should be activated depending on their schedule.
  */
 
-Meteor.startup(function () {
+Meteor.methods({
 	/*
 	 * Grabs any active sprinkler and, if there is one, will run the countdown timer. If
 	 * not, check all other sprinklers for schedule details.
 	 */
-	function checkSprinklers() {
+	checkSprinklers: function() {
 		var activeSprinkler = Sprinklers.activeSprinkler();
 
 		if (activeSprinkler) {
-			activeSprinklerCountdown(activeSprinkler);
+			Meteor.call('activeSprinklerCountdown', activeSprinkler);
 		} else {
-			checkAllSchedules();
+			Meteor.call('checkAllSchedules');
 		}
-	}
+	},
 
 	/*
-	 * Checks if a sprinkler's scheduled duration has finished. Sets the sprinkler
-	 * if it has; increments the currentTimer if it hasn't
-	 *
-	 * @params {object} [sprinkler] An active/paused sprinkler
-	 */
-	function activeSprinklerCountdown(sprinkler) {
+	* Check all sprinklers to see if any of them should be set as active
+	*/
+	checkAllSchedules: function() {
+		var sprinklers = Sprinklers.find(),
+		stopLoop = false;
+
+		sprinklers.forEach(function(sprinkler) {
+			if (!stopLoop) {
+				// If one of the sprinklers is set to active, set `stopLoop` to true
+				// so that we don't check any more.
+				stopLoop = Meteor.call('checkSingleSprinklerSchedule', sprinkler);
+			}
+		});
+	},
+
+	/*
+	* Checks if a sprinkler's scheduled duration has finished. Sets the sprinkler
+	* if it has; increments the currentTimer if it hasn't
+	*
+	* @params {object} [sprinkler] An active/paused sprinkler
+	*/
+	activeSprinklerCountdown: function(sprinkler) {
+		if (sprinkler.status === 'paused') {
+			return;
+		}
+		
 		if (Sprinklers.durationFinished(sprinkler)) {
 			// We've passed the duration. Reset the timer and set as inactive
 			Sprinklers.update(sprinkler._id, {
@@ -48,30 +68,14 @@ Meteor.startup(function () {
 				}
 			});
 		}
-	}
+	},
 
 	/*
-	 * Check all sprinklers to see if any of them should be set as active
-	 */
-	function checkAllSchedules() {
-		var sprinklers = Sprinklers.find(),
-			stopLoop = false;
-
-		sprinklers.forEach(function(sprinkler) {
-			if (!stopLoop) {
-				// If one of the sprinklers is set to active, set `stopLoop` to true
-				// so that we don't check any more.
-				stopLoop = checkSingleSprinklerSchedule(sprinkler);
-			}
-		});
-	}
-
-	/*
-	 * Checks a single sprinklers schedule to see if it should be activated.
-	 *
-	 * @params {object} [sprinkler] The sprinkler to be checked
-	 */
-	function checkSingleSprinklerSchedule(sprinkler) {
+	* Checks a single sprinklers schedule to see if it should be activated.
+	*
+	* @params {object} [sprinkler] The sprinkler to be checked
+	*/
+	checkSingleSprinklerSchedule: function(sprinkler) {
 		// Shouldn't run today
 		if (!Sprinklers.isScheduledDay(sprinkler)) {
 			return;
@@ -108,6 +112,10 @@ Meteor.startup(function () {
 			}
 		}
 	}
+});
 
-	Meteor.setInterval(checkSprinklers, 1000);
+Meteor.startup(function () {
+	Meteor.setInterval(function() {
+		Meteor.call('checkSprinklers');
+	}, 1000);
 });
